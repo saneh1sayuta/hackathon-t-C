@@ -10,6 +10,7 @@ function publish() {
     //// DEBUG:
     const userName = "あ";
     const message = $('.room-message_textarea').val();
+    console.log(message);
     sendMessage(userName, message);
     return false;
 }
