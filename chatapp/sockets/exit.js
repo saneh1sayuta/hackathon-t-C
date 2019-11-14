@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (socket) {
+module.exports = function (socket, io) {
     // 退室メッセージをクライアントに送信する
     socket.on('sendMessageEvent', function (data) {
       if (!data) {
