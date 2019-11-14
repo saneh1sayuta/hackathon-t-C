@@ -2,15 +2,11 @@
 
 // 投稿メッセージをサーバに送信する
 function publish() {
-    // ユーザ名を取得
-    // const userName = $('#userName').val();
-    // // 入力されたメッセージを取得
-    // const message = $('.room-message_textarea').val();
-    // 投稿内容を送信
-    //// DEBUG:
-    const userName = "あ";
+    //ユーザ名を取得
+    const userName = $('#userName').val();
+    // 入力されたメッセージを取得
     const message = $('.room-message_textarea').val();
-    console.log(message);
+    // 投稿内容を送信
     sendMessage(userName, message);
     return false;
 }
