@@ -2,13 +2,19 @@
 
 module.exports = function (socket, io) {
     // 投稿メッセージを送信する
-    socket.on('sendMessageEvent', function (data) {
+    socket.on('sendMessageEvents', function (data) {
       var regExp = /[^ \n]/;
-      var s = data['message'];
-      console.log(s);
-      //if(s.match(regExp) == null) return;
-      io.sockets.emit('receiveMessageEvent', data);
+      var s = String(data['message']);
+      if(s.match(regExp) == null) return;
+      //data['message'] = replace_br(s);
+      io.sockets.emit('receiveMessageEvents', data);
     });
 };
+
+function replace_br(s){
+  var res = s.match(/./);
+  var rel = res.join();
+  return rel;
+}
 
 // ServerSide

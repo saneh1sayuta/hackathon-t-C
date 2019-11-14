@@ -13,4 +13,3 @@ module.exports = function (socket) {
       io.sockets.emit("receiveMessageEvent", data);   //自と他クライアントに送信
     });
  });
-};
