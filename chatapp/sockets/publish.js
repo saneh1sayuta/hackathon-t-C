@@ -3,7 +3,8 @@
 module.exports = function (socket, io) {
     // 投稿メッセージを送信する
     socket.on('sendMessageEvent', function (data) {
-      if(data['message'] == "") return;
+      var regExp = /./;
+      if(!data['message'].match(regExp)) return;
       io.sockets.emit('receiveMessageEvent', data);
     });
 };
