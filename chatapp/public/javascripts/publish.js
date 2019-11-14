@@ -1,5 +1,14 @@
 'use strict';
 
+$(window).keyup(function(e){
+  if(event.ctrlKey){
+    if(e.keyCode === 13){
+      publish();
+      return false;
+    }
+  }
+});
+
 // 投稿メッセージをサーバに送信する
 function publish() {
     //ユーザ名を取得
@@ -28,7 +37,9 @@ function sendMessage(userName, message, date){
 
 // サーバから受信した投稿メッセージを画面上に表示する
 socket.on('receiveMessageEvents', function (data) {
-    $('#thread').prepend('<pre>' + data['userName'] + "さん：　" + data['message'] + " DATE: " + data['date'] + '</pre>');
+  var style = "";
+  if(data['userName'] == $('#userName').val()) style = "style='background:red;'";
+  $('#thread').prepend('<pre ' + style + '>' + '<strong>' + data['userName'] + '</strong>' + "さん　" + data['date'] + "</br>" + data['message'] + '</pre>');
 });
 
 // ClientSide
