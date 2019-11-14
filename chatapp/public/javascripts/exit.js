@@ -20,7 +20,7 @@ function exit() {
 }
 
 // サーバから受信した退室メッセージを画面上に表示する
-socket.on('receiveMessageEvent', function (data) {
+socket.on('sendMessage', function (data) {
     // 画面上にデータを表示する。
     $('#thread').prepend('<p>' + data  + '</p>');
 });
