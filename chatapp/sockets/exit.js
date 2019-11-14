@@ -2,8 +2,8 @@
 
 module.exports = function (socket) {
     // 退室メッセージをクライアントに送信する
-    const socketIo = require('socket.io')(server, { wsEngine: 'ws' });
-    const io = socketIo.listen(server);
+    // const socketIo = require('socket.io')(server, { wsEngine: 'ws' });
+    // const io = socketIo.listen(server);
 
     socket.on('sendMessageEvent', function (data) {
       if (!data) {
