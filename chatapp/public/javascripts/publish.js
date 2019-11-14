@@ -18,7 +18,7 @@ function sendMessage(userName, message){
 
 // サーバから受信した投稿メッセージを画面上に表示する
 socket.on('receiveMessageEvent', function (data) {
-    $('#thread').prepend('<p>' + data['userName'] + "さん　" + data['message'] + '</p>');
+    $('#thread').prepend('<p>' + data['userName'] + "さん：　" + data['message'] + '</p>');
 });
 
 // ClientSide
