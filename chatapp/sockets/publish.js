@@ -6,14 +6,13 @@ module.exports = function (socket, io) {
       var regExp = /[^ \n]/;
       var s = String(data['message']);
       if(s.match(regExp) == null) return;
-      //data['message'] = replace_br(s);
+      data['message'] = replace_br(s);
       io.sockets.emit('receiveMessageEvents', data);
     });
 };
 
 function replace_br(s){
-  var res = s.match(/./);
-  var rel = res.join();
+  var rel = s.replace(/\\r\\n|\\r|\\n/g, '<br>');
   return rel;
 }
 
