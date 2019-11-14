@@ -10,6 +10,8 @@ module.exports = function (socket) {
           return;
       }
       console.log('クライアントの入力値：' + data);
+
+      socket.broadcast.emit();
       //io.sockets.emit("receiveMessageEvent", data);   //自と他クライアントに送信
     });
  });
