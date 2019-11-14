@@ -22,7 +22,7 @@ function publish() {
     return false;
 }
 
-function nowDate(){
+function nowDate(){ // 現在日時を(HH:MM:SS M,DD,YYYY)の文字列で返す
   const month = {0: "Jan", 1: "Feb", 2: "Mar", 3:"Apr", 4: "May", 5: "Jun",
     6: "Jul", 7: "Aug", 8: "Sep", 9: "Oct", 10: "Nov", 11: "Dec"};
   var now = new Date();
@@ -30,6 +30,7 @@ function nowDate(){
       + month[now.getMonth()] + "," + now.getDate() + "," + now.getFullYear();
   return date;
 }
+
 function sendMessage(userName, message, date){
   const data = {'userName': userName, 'message' : message, 'date' : date};
   socket.emit('sendMessageEvents', data);
@@ -38,8 +39,8 @@ function sendMessage(userName, message, date){
 // サーバから受信した投稿メッセージを画面上に表示する
 socket.on('receiveMessageEvents', function (data) {
   var style = "";
-  if(data['userName'] == $('#userName').val()) style = "style='background:red;'";
-  $('#thread').prepend('<pre ' + style + '>' + '<strong>' + data['userName'] + '</strong>' + "さん　" + data['date'] + "</br>" + data['message'] + '</pre>');
+  if(data['userName'] == $('#userName').val()) style = "style='background:orange;'";
+  $('#thread').prepend('<pre ' + style + '>' + '<strong>' + data['userName'] + '</strong>' + " さん　" + data['date'] + "</br>" + data['message'] + '</pre>');
 });
 
 // ClientSide
