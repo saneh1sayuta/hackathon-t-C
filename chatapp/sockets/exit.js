@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (server) {
+//module.exports = function (server) {
     // 退室メッセージをクライアントに送信する
     //const socketIo = require('socket.io')(server, { wsEngine: 'ws' });
     //const io = socketIo.listen(server);
