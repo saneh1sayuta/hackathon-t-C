@@ -7,6 +7,7 @@ function memo() {
     // 入力されたメッセージを取得
     const message = $('.room-message_textarea').val();
     // メモの内容を表示
+    $('.room-message_textarea').val("");
     $('#thread').prepend('<p>' + "あなただけに表示されています：　" + message + '</p>');
 
     return false;

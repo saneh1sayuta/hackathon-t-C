@@ -6,6 +6,7 @@ function publish() {
     const userName = $('#userName').val();
     // 入力されたメッセージを取得
     const message = $('.room-message_textarea').val();
+    $('.room-message_textarea').val("");
     // 投稿内容を送信
     sendMessage(userName, message);
     return false;
