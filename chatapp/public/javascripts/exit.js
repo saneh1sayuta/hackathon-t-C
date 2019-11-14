@@ -5,7 +5,8 @@ const socket = io.connect();
 // 退室メッセージをサーバに送信する
 function exit() {
     // ユーザ名取得
-    const userName = '＠＠＠＠';
+    const userName = $('#userName').val();
+  　
     // 退室メッセージイベントを送信する
 
     function sendMessage() {
