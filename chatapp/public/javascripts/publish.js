@@ -15,7 +15,7 @@ function publish() {
 }
 
 function sendMessage(userName, message){
-  data = {'userName': userName, 'message' : message};
+  const data = {'userName': userName, 'message' : message};
   socket.emit('sendMessageEvent', data);
 }
 
