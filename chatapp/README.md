@@ -49,6 +49,17 @@ hackathon-chatapp
 
 ※追加実装した機能を追記してください
 
-* ...
+* public/log.js
+    * chatLogクラス chatlog を定義します。
+    * クライアント側のどこからでも chatlog の名前でアクセスできます。
+    * 以下 chatLog の仕様
+        * chatlog.posts : 投稿のログがJSONオブジェクトで格納されています。
+        userName: 名前
+        date: タイムスタンプ('hh:mm:ss MM:DD:YYYY' の文字列、ただし、MMはアルファベット)
+        message: 投稿メッセージ
+         example:
+          console.log(chatlog[0].message)
+            => expected: 一つ目の投稿メッセージ
+        * chatlog.OnLogUpdate() : クライアントで持ってるJSONを投稿のたびに更新します。ログにデータを追加する際呼ばないと、クライアントに持ってるJSONとサーバ上のログがずれるので呼んでください。
 * ...
 * ...
