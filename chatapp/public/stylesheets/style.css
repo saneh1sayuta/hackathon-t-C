@@ -24,6 +24,10 @@ div {
     margin: 20px;
 }
 
+h1 {
+    color: blue;
+}
+
 /*
  * ボタンの共通設定
  */
