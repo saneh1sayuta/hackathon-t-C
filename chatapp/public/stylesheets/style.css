@@ -25,14 +25,17 @@ div {
 }
 
 h1 {
-    color: blue;
+    color: #005EAC;
+    border-bottom: 3px solid black;
 }
 
 /*
  * ボタンの共通設定
  */
 .common-button {
-
+    background-color: #005EAC;
+    color: white;
+    padding 5px;
 }
 
 /*
@@ -53,6 +56,8 @@ h1 {
 .index-enter_button {
 
 }
+
+
 
 /*
  * チャットルーム画面（room.hbs）に関する設定
