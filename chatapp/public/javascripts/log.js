@@ -28,11 +28,13 @@ class chatLog {
   }
   OnlogDeleted(postNum){
     socket.emit('logDeteled');
+    console.log("delete");
     $.each(chatlog.posts, function(idx, val){
-      if(chatlog.posts != postNum){
+      if(val.postNum != postNum){
         socket.emit('logging', val);
       }
     })
+    socket.emit('logRequest');
   }
 }
 socket.emit('logRequest');

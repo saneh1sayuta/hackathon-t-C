@@ -21,6 +21,20 @@ module.exports = function (socket, io) {
         io.sockets.emit('logReturn', data);
       });
     })
+
+    socket.on('logDeteled', function(){
+      var path = '/home/dev11/hackathon/chatapp/chatlog/log.txt';
+      fs.writeFile(path, '', function(err){ console.log(err);});
+    })
+
+    socket.on('logging', function(data){
+      var post = data['postNum'] + '/' + data['userName'] + '/' + data['date'] + '/' + data['message'] + '\n';
+      var path = '/home/dev11/hackathon/chatapp/chatlog/log.txt';
+      fs.appendFile(path, post, function(err){
+        if(err) throw err;
+      });
+
+    })
 };
 
 function logging(data){

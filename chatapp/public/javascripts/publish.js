@@ -41,7 +41,7 @@ function sendMessage(userName, message, date){
 
 function deletePost(postNum){
   $('div .postNum_' + postNum).remove();
-  //chatlog.OnLogDeleted(postNum);
+  chatlog.OnlogDeleted(postNum);
 }
 
 // サーバから受信した投稿メッセージを画面上に表示する
