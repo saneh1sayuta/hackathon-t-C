@@ -94,7 +94,7 @@ h1 {
 }
 
 @media screen and (max-width:425px) {
-.body i {
+.body {
     color: blue;
     }
 }
