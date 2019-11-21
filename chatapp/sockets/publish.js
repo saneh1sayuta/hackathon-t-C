@@ -24,7 +24,7 @@ module.exports = function (socket, io) {
 };
 
 function logging(data){
-  var post = data['userName'] + '/' + data['date'] + '/' + data['message'] + '\n';
+  var post = data['postNum'] + '/' + data['userName'] + '/' + data['date'] + '/' + data['message'] + '\n';
   var path = '/home/dev11/hackathon/chatapp/chatlog/log.txt';
   fs.appendFile(path, post, function(err){
     if(err) throw err;

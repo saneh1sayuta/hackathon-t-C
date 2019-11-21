@@ -14,8 +14,8 @@ class chatLog {
         })
         var comma = ',\n';
         if(idx == temp.length-2) comma = '';
-        json_data += '{ "userName": ' + elem[0] + ' ,"date": ' + elem[1] +
-          ' ,"message": ' + elem[2] + ' }' + comma;
+        json_data += '{ "postNum":' + elem[0] + ',"userName": ' + elem[1] + ' ,"date": ' + elem[2] +
+          ' ,"message": ' + elem[3] + ' }' + comma;
       }
     });
     json_data += '\n]';
@@ -23,8 +23,11 @@ class chatLog {
     this.posts = JSON.parse(json_data);
   }
   OnLogUpdate(data){
-    var add = { userName: data['userName'], date: data['date'], message: data['message']};
+    var add = { postNum: data['postNum'], userName: data['userName'], date: data['date'], message: data['message']};
     this.posts.push(add);
+  }
+  OnlogDeleted(postNum){
+
   }
 }
 socket.emit('logRequest');

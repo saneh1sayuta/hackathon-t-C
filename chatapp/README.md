@@ -49,13 +49,14 @@ hackathon-chatapp
 
 ※追加実装した機能を追記してください
 
-* public/log.js
+* public/log.js by 竹田
     * chatLogクラス chatlog を定義します。
     * クライアント側のどこからでも chatlog の名前でアクセスできます。
+    * ログは chatapp/chatlog/log.txt
     * 以下 chatLog の仕様
         * chatlog.posts : 投稿のログがJSONオブジェクトで格納されています。
         userName: 名前
-        date: タイムスタンプ('hh:mm:ss MM:DD:YYYY' の文字列、ただし、MMはアルファベット)
+        date: タイムスタンプ('hh:mm:ss MM,DD,YYYY' の文字列、ただし、MMはアルファベット)
         message: 投稿メッセージ
          example:
           console.log(chatlog[0].message)

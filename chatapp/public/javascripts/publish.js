@@ -32,16 +32,25 @@ function nowDate(){ // 現在日時を(HH:MM:SS M,DD,YYYY)の文字列で返す
 }
 
 function sendMessage(userName, message, date){
-  const data = {'userName': userName, 'message' : message, 'date' : date};
+  if(chatlog.posts.length == 0) var postNum = 0;
+  else var postNum = Number(chatlog.posts[chatlog.posts.length-1].postNum)+1;
+  const data = {'postNum': postNum, 'userName': userName, 'message' : message, 'date' : date};
   socket.emit('sendMessage', data);
   socket.emit('loggingMessage', data);
+}
+
+function deletePost(postNum){
+  $('div .postNum_' + postNum).remove();
+  //chatlog.OnLogDeleted(postNum);
 }
 
 // サーバから受信した投稿メッセージを画面上に表示する
 socket.on('receiveMessage', function (data) {
   var style = "";
   if(data['userName'] == $('#userName').val()) style = "style='background:orange;'";
-  $('#thread').prepend('<pre ' + style + '>' + '<strong>' + data['userName'] + '</strong>' + " さん　" + data['date'] + "</br>" + data['message'] + '</pre>');
+  $('#thread').prepend('<div class="postNum_' + data['postNum'] + '"></div>');
+  $('.postNum_'+data['postNum']).prepend('<pre ' + style + '>' + '<strong>' + data['userName'] + '</strong>' + " さん　" + data['date'] + "</br>" + data['message'] + '</pre>');
+  $('.postNum_'+data['postNum']).prepend('<p class="delbutton" onclick=deletePost(' + data['postNum'] + ')>削除</p>');
 });
 
 // ClientSide
