@@ -18,7 +18,7 @@ div {
     margin: 20px;
 }
 
-h1 {
+.h1 {
     color: #005EAC;
     border-bottom: 3px solid black;
 }
@@ -94,7 +94,7 @@ h1 {
 }
 
 @media screen and (max-width: 425px) {
-.body {
-    background-color: #00B7FF;
+.h1 {
+    color: #00B7FF;
     }
 }
