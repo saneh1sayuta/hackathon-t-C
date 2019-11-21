@@ -9,7 +9,7 @@ module.exports = function (socket) {
 
 module.exports = function (socket) {
     // 入室メッセージをクライアントに送信する
-    socket.on('existMessageEvent', function (data) {
-      socket.broadcast.emit("receiveMessageEvent",data);
+    socket.on('send_exist_MessageEvent', function (data) {
+      socket.broadcast.emit("receive_exist_MessageEvent",data);
   });
 };

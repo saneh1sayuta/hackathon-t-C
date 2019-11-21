@@ -13,8 +13,8 @@ socket.on('receiveMessageEvent', function (data) {
 });
 
 
-  socket.emit("existMessageEvent",userName+"さん");
+  socket.emit("send_exist_MessageEvent",userName+"さん");
 
-socket.on('receiveMessageEvent', function (data) {
+socket.on('receive_exist_MessageEvent', function (data) {
       $('#exist').prepend('<p>' + data + '</p>');
   });
