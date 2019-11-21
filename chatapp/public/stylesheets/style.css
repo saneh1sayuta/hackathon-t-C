@@ -2,12 +2,6 @@
  * 画面全体に関する設定
  */
 
- @media screen and (max-width:425px) {
- .social i {
-     color: blue;
-     }
- }
-
 body {
     font: 14px "Lucida Grande", Meiryo, Helvetica, Arial, sans-serif;
 }
@@ -97,4 +91,10 @@ h1 {
 
 .room-exit_button {
 
+}
+
+@media screen and (max-width:425px) {
+.body i {
+    color: blue;
+    }
 }
