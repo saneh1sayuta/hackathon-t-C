@@ -12,7 +12,8 @@ socket.on('receiveMessageEvent', function (data) {
     $('#thread').prepend('<p>' + data + '</p>');
 });
 
-  socket.emit("sendMessageEvent",userName+"さん");
+
+  socket.emit("existMessageEvent",userName+"さん");
 
 socket.on('receiveMessageEvent', function (data) {
       $('#exist').prepend('<p>' + data + '</p>');
