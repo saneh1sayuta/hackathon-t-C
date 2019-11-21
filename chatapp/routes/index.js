@@ -11,15 +11,7 @@ router.get('/', function(request, response, next) {
 // チャット画面の表示
 router.post('/room', function(request, response, next) {
     console.log('ユーザ名：' + request.body.userName);
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    response.render('room', { userName: 'request.body.userName' });
-=======
     response.render('room', { userName: request.body.userName });
->>>>>>> Stashed changes
-=======
-    response.render('room', { userName: request.body.userName });
->>>>>>> Stashed changes
 });
 
 module.exports = router;
