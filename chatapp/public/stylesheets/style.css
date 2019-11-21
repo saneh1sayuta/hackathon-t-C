@@ -94,7 +94,7 @@ div {
 }
 
 @media screen and (max-width: 425px) {
-.h1 {
-    color: #00B7FF;
+.common-button {
+    color: blue;
     }
 }
