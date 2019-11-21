@@ -16,5 +16,5 @@ socket.on('receiveMessageEvent', function (data) {
   socket.emit("send_exist_MessageEvent",userName+"さん");
 
 socket.on('receive_exist_MessageEvent', function (data) {
-      $('#exist').prepend('<p>' + data + '</p>');
+      $('#exist').prepend('<div>' + data + '</div>');
   });
