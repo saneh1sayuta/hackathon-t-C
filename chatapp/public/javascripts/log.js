@@ -27,7 +27,12 @@ class chatLog {
     this.posts.push(add);
   }
   OnlogDeleted(postNum){
-
+    socket.emit('logDeteled');
+    $.each(chatlog.posts, function(idx, val){
+      if(chatlog.posts != postNum){
+        socket.emit('logging', val);
+      }
+    })
   }
 }
 socket.emit('logRequest');
