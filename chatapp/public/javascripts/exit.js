@@ -15,7 +15,7 @@ function exit() {
       socket.emit("sendMessageEvent", message);
     }
 
-    // 退室
+    // 退室 もともとは/
     location.href = '/';
 }
 
