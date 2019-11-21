@@ -15,8 +15,8 @@ function exit() {
       socket.emit("sendMessageEvent", message);
     }
 
-    // 退室
-    location.href = '/';
+    // 退室 もともとは/
+    location.href = '';
 }
 
 // サーバから受信した退室メッセージを画面上に表示する
