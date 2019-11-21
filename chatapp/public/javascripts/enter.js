@@ -2,10 +2,6 @@
 
 // 入室メッセージをサーバに送信する
 
-// 入力されたユーザ名を取得する
-//const userName = '';
-// 入室メッセージイベントを送信する
-
 　// 入力されたユーザ名を取得する
 　const userName = $("#userName").val();
 　// 入室メッセージイベントを送信する
@@ -15,3 +11,9 @@
 socket.on('receiveMessageEvent', function (data) {
     $('#thread').prepend('<p>' + data + '</p>');
 });
+
+  socket.emit("sendMessageEvent",userName+"さん");
+
+socket.on('receiveMessageEvent', function (data) {
+      $('#exist').prepend('<p>' + data + '</p>');
+  });

@@ -5,8 +5,8 @@
     <div class="row">
         <form method="post" action="/">
             <div class="room-login_user">
-                <p>ログインユーザ：{{userName}}さん</p>
-                <input id= userName type="hidden" value={{userName}}>
+                ログインユーザ：さん
+                <input id="userName" type="hidden" value=userName>
             </div>
             <div class="room-message">
                 <textarea id="message" rows="4" class="room-message_textarea" placeholder="投稿文を入力してください"></textarea>
@@ -21,6 +21,10 @@
             <div class="room-exit">
                 <input type="button" value="退室する" class="common-button room-exit_button" onclick="exit();">
             </div>
+            <div class="room-exist">
+                <div id="exist"></div>
+            </div>
+
         </form>
     </div>
 </div>
@@ -30,7 +34,3 @@
 <script src="/javascripts/publish.js"></script>
 <script src="/javascripts/memo.js"></script>
 <script src="/javascripts/exit.js"></script>
-<script src="/javascripts/log.js"></script>
-<script src="/javascripts/room.js"></script>
-<script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/emojione/2.2.7/assets/css/emojione.min.css">
